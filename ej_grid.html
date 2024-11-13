@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bit Developers</title>
+    <meta
+      name="description"
+      content="Demo de una página con grid sobre electrónica"
+    />
+    <meta
+      name="keywords"
+      content="hotel, solar, proyecytos, cajas, ahorro, energía"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+    <style>
+      :root{
+        --primary-color: whitesmoke;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .header,
+      .showcase,
+      .cards1,
+      .cards2,
+      .contact,
+      .footer {
+        border: 2px black solid;
+        padding: 0.5rem;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-areas:
+          "header  header   header   header"
+          "showcase showcase showcase showcase"
+          "cards1 cards1 cards1 cards1"
+          "cards2 cards2 cards2 cards2"
+          "contact contact contact contact"
+          "footer footer footer footer";
+
+        gap: 1rem;
+      }
+
+      .header {
+        grid-area: header;
+        display: flex;
+        height: 20px;
+        
+        padding: 1rem;/* padding: top right bottom left; */
+        align-items: center;
+        justify-content: space-between;
+        background-color: #333;
+      }
+      .header h1{
+        
+        color: var(--primary-color);
+      }
+      
+      .ulist{
+        display: flex;
+      }
+      .header .ulist,
+      a {
+        list-style-type: none;
+        text-decoration: none;
+        color: var(--primary-color);
+        padding: 1rem 0rem 0rem 0.5rem;/* padding: top right bottom left; */
+      }
+
+      .showcase {
+       
+        grid-area: showcase;
+        width: 960px;
+        height: 240px;
+      }
+      .showcase .duotone::before{
+        
+        width: 100%;
+        height: 100%;
+        background-color: rgba (51, 51, 51, 0.7);
+        z-index: 1;
+      }
+
+      .showcase video{
+      object-fit: cover;
+      max-width: 100%;
+      height: 100%;
+      
+     }
+    
+     .cards1 {
+        grid-area: cards1;
+      }
+
+      .cards2 {
+        grid-area: cards2;
+      }
+
+      .contact {
+        grid-area: contact;
+      }
+
+      .footer {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        
+        <div class="nombreEmpresa"><h1><i class="fa-solid fa-cubes" class="logo"></i>&nbsp;Bit Developers</h1></div>
+        <div class="menu">
+          <ul class="ulist">
+            <li><a href="#">Conocenos &nbsp; &vert;</a></li>
+            <li><a href="#">Electr&oacute;nica solar &nbsp; &vert;</a></li>
+            <li><a href="#">Proyectos a medida &nbsp; &vert;</a></li>
+            <li><a href="#">Cajas para electr&oacute;nica</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="showcase">
+        <div class="duotone"></div>
+        <video  autoplay muted>
+          <source src="./video/VidnozTextToVideo.mp4" type="video/mp4">
+          <!-- <source src="movie.ogg" type="video/ogg"> -->
+        Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="cards1">
+        <div><img src="./images/solar-640-426.jpg" alt=""></div>
+        <div><img src="./images/proyectos-640-480.jpg" alt=""></div>
+        <div><img src="./images/caja.png" alt=""></div>
+      </div>
+      <div class="cards2"></div>
+      <div class="contact"></div>
+      <div class="footer"></div>
+    </div>
+  </body>
+</html>
