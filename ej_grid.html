@@ -34,7 +34,7 @@
 
       .header,
       .showcase,
-      .cards1,
+      .cards-container,
       .cards2,
       .contact,
       .footer {
@@ -49,7 +49,7 @@
         grid-template-areas:
           "header  header   header   header"
           "showcase showcase showcase showcase"
-          "cards1 cards1 cards1 cards1"
+          "cards-container cards-container cards-container cards-container"
           "cards2 cards2 cards2 cards2"
           "contact contact contact contact"
           "footer footer footer footer";
@@ -61,14 +61,12 @@
         grid-area: header;
         display: flex;
         height: 20px;
-        
         padding: 1rem;/* padding: top right bottom left; */
         align-items: center;
         justify-content: space-between;
         background-color: #333;
       }
-      .header h1{
-        
+      .header h1{ 
         color: var(--primary-color);
       }
       
@@ -104,11 +102,17 @@
       
      }
     
-     .cards1 {
-        grid-area: cards1;
+     .cards-container{
+      grid-area: cards-container;
+        width: 100vh;
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        /*gap: 10%;*/
       }
-
-      .cards2 {
+     
+     .cards2 {
         grid-area: cards2;
       }
 
@@ -120,16 +124,7 @@
         grid-area: footer;
       }
       /* Inicio del css de las cards*/
-      .cards-container{
-        width: 100vh;
-        display: flex;
-        /*flex-direction: column;*/
-        justify-content: space-around;
-        
-        
-        flex-wrap: wrap;
-        gap: 10%;
-      }
+      
 
       .card{    
           background-color: #333;
@@ -179,10 +174,10 @@
           <figure>
               <img src="./images/solar-640-426.jpg" alt="Fotovoltaica">
           </figure>
-          <div class="card__title">
-              <h2 class="titlePicture">Solar</h2>
+          <div>
+              <h2>Solar</h2>
           </div>
-          <div class="card__content">
+          <div>
               <p>bla bla bla solar y fotovoltaica
               </p>
           </div>
@@ -192,10 +187,10 @@
             <figure>
                 <img src="./images/proyectos-640-480.jpg" alt="proyectos">
             </figure>
-                <div class="card__title">
-                    <h2 class="titlePicture">Proyectos a medida</h2>
+                <div>
+                    <h2>Proyectos a medida</h2>
                 </div>
-                <div class="card__content">
+                <div>
                     <p>Proyectos a medidad y bla bla bla....
                     </p>
                 </div>
@@ -205,10 +200,10 @@
             <figure>
                 <img src="./images/caja.png" alt="Cajas electrónica">
             </figure>
-                <div class="card__title">
-                    <h2 class="titlePicture">Diseño cajas electrónica</h2>
+                <div>
+                    <h2>Diseño cajas electrónica</h2>
                 </div>
-                <div class="card__content">
+                <div>
                     <p>Diseño de cajas de electrónica bla bla bla y .....</p>
                 </div>
         </div>
