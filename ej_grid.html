@@ -119,6 +119,34 @@
       .footer {
         grid-area: footer;
       }
+      /* Inicio del css de las cards*/
+      .cards-container{
+        width: 100vh;
+        display: flex;
+        /*flex-direction: column;*/
+        justify-content: space-around;
+        
+        
+        flex-wrap: wrap;
+        gap: 10%;
+      }
+
+      .card{    
+          background-color: #333;
+          color: white;
+          width: 250px;
+          height: 250px;
+          overflow: auto;
+          border-radius: 20px;
+          /* overflow: hidden;*/
+          position: relative;
+          /*cursor: pointer;*/ 
+        }
+
+        img{
+            width: 100%;
+        }
+      /*Fin del css de las cards*/
     </style>
   </head>
   <body>
@@ -144,11 +172,50 @@
         Your browser does not support the video tag.
         </video>
       </div>
-      <div class="cards1">
-        <div><img src="./images/solar-640-426.jpg" alt=""></div>
-        <div><img src="./images/proyectos-640-480.jpg" alt=""></div>
-        <div><img src="./images/caja.png" alt=""></div>
-      </div>
+      <!--Aquí van las cards-->
+      <div class="cards-container">
+
+        <div class="card">
+          <figure>
+              <img src="./images/solar-640-426.jpg" alt="Fotovoltaica">
+          </figure>
+          <div class="card__title">
+              <h2 class="titlePicture">Solar</h2>
+          </div>
+          <div class="card__content">
+              <p>bla bla bla solar y fotovoltaica
+              </p>
+          </div>
+        </div>
+
+        <div class="card">
+            <figure>
+                <img src="./images/proyectos-640-480.jpg" alt="proyectos">
+            </figure>
+                <div class="card__title">
+                    <h2 class="titlePicture">Proyectos a medida</h2>
+                </div>
+                <div class="card__content">
+                    <p>Proyectos a medidad y bla bla bla....
+                    </p>
+                </div>
+        </div>
+
+        <div class="card">
+            <figure>
+                <img src="./images/caja.png" alt="Cajas electrónica">
+            </figure>
+                <div class="card__title">
+                    <h2 class="titlePicture">Diseño cajas electrónica</h2>
+                </div>
+                <div class="card__content">
+                    <p>Diseño de cajas de electrónica bla bla bla y .....</p>
+                </div>
+        </div>
+      </div><!--cierra la clase cards-container-->
+      <!--Fin de los cards-->
+
+
       <div class="cards2"></div>
       <div class="contact"></div>
       <div class="footer"></div>
