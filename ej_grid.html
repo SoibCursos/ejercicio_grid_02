@@ -141,11 +141,16 @@
         /*gap: 10%;*/
       }
 
-      .cards2 {/*no funciona como quier. Quiero centrar los textos*/
+      .cards2 {
         grid-area: cards2;
-        display: flexbox;
-        justify-content: center;
+        display: flex; /* Cambié flexbox a flex */
+        flex-direction: column; /* Esto asegura que los elementos se apilen verticalmente */
+        align-items: center; /* Centra el contenido horizontalmente */
+        justify-content: center; /* Centra el contenido verticalmente */
+        text-align: center; /* Centra el texto dentro de los elementos */
         background-color: #333;
+        height: 100%; /* Asegura que la altura sea suficiente para que funcione el centrado vertical */
+        padding: 2rem; /* Ajusta el espacio interior si es necesario */
       }
 
       .contact {
