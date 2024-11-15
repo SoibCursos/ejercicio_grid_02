@@ -63,8 +63,13 @@
         align-items: center;
         justify-content: space-between;
         background-color: #333;
-        opacity: 0.4;
+        opacity: 0.9;
+        position: sticky;
+        top: 0;
+        z-index: 10;
       }
+
+      
       
       .ulist {
         display: flex;
@@ -113,11 +118,11 @@
         align-items: center;
       }
 
-      .presentacion {
+      /*.presentacion {*/
         h2,
         h3 {
           color: var(--primary-color);
-          padding: 5% 0 0 5%;/* padding: top right bottom left; */
+          padding: 3% 0 0 5%;/* padding: top right bottom left; */
         }
         h2 {
           font-size: 1.4rem;
@@ -125,7 +130,7 @@
         h3 {
           font-size: 2rem;
         }
-      }
+      /*}*/
       .cards-container {
         grid-area: cards-container;
 
@@ -136,8 +141,11 @@
         /*gap: 10%;*/
       }
 
-      .cards2 {
+      .cards2 {/*no funciona como quier. Quiero centrar los textos*/
         grid-area: cards2;
+        display: flexbox;
+        justify-content: center;
+        background-color: #333;
       }
 
       .contact {
@@ -248,7 +256,11 @@
       <!--cierra la clase cards-container-->
       <!--Fin de los cards-->
 
-      <div class="cards2"></div>
+      <div class="cards2">
+        <h2>Compañía fundada cuando San Pedro perdi&oacute; las chanclas</h2>
+        <h3>Bit Developers cotiza en el Sky Growth desde 64-68 d.C.</h3>
+        <p>Con el objetivo de facilitar el desarrollo en energias renovables y maximizar la eficiencia en edificios en su plan de expansión internacional de la empresa, el 25 de diciembre de 68 d.c. nos incorporamos al Sky Growth.</p>
+      </div>
       <div class="contact"></div>
       <div class="footer"></div>
     </div>
