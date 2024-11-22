@@ -32,15 +32,17 @@
         box-sizing: border-box;
       }
 
+      /*Para mis chequeos
       .header,
       .showcase,
       .cards-container,
       .cards2,
+      .form,
       .contact,
       .footer {
         border: 2px black solid;
         padding: 0.5rem;
-      }
+      }*/
 
       .container {
         max-width: 960px;
@@ -51,6 +53,7 @@
           "showcase showcase showcase showcase"
           "cards-container cards-container cards-container cards-container"
           "cards2 cards2 cards2 cards2"
+          "form form form form"
           "contact contact contact contact"
           "footer footer footer footer";
       }
@@ -151,16 +154,40 @@
         background-color: #333;
         height: 100%; /* Asegura que la altura sea suficiente para que funcione el centrado vertical */
         padding: 2rem; /* Ajusta el espacio interior si es necesario */
+        color:white;
       }
 
+      .cards2 > p{
+        padding: 1.7rem;
+      }
       .contact {
         grid-area: contact;
+        display: flex;
+        justify-content: space-between;
+      
       }
 
       .footer {
         grid-area: footer;
       }
       /* Inicio del css de las cards*/
+
+      /*Posicionamineto del fantasma*/
+      .ghost-icon {
+        max-width: 960px;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        bottom: 20px;  /* Coloca el icono a 20px desde la parte inferior */
+        right: 20%;   /* Coloca el icono a 20px desde el borde derecho */
+        z-index: 100;  /* Asegura que el ícono esté por encima de otros elementos */
+      }
+      /*fin posicionamiento del fantasma*/
+      .ghost-icon > a > img{
+        width: 24px;
+        height: 24px;
+      }
+
 
       .card {
         background-color: #333;
@@ -178,28 +205,39 @@
         width: 100%;
       }
       /*Fin del css de las cards*/
+
+      /*MediaQuery para pasar el dejabooo del móvil*/
+      @media only screen and (max-width: 600px) {
+        body {
+          background-color: lightblue;
+        }
+      }
+      /*Fin dejaboooooooooo del móvil*/
     </style>
   </head>
+  <!--********************************************************-->
   <body>
     <div class="container">
-      <div class="header">
+      <div class="header" id="header">
         <div class="nombreEmpresa">
           <h1>
             <i class="fa-solid fa-cubes" class="logo"></i>&nbsp;Bit Developers
           </h1>
         </div>
+        <!--Menu-->
         <div class="menu">
           <ul class="ulist">
-            <li><a href="#">Conocenos &nbsp; &vert;</a></li>
-            <li><a href="#">Electr&oacute;nica solar &nbsp; &vert;</a></li>
-            <li><a href="#">Proyectos a medida &nbsp; &vert;</a></li>
-            <li><a href="#">Cajas para electr&oacute;nica</a></li>
+            <li><a href="#conocenos">Conocenos &nbsp; &vert;</a></li>
+            <li><a href="#solar">Solar&nbsp;&nbsp;Proyectos&nbsp;&nbsp;Dise&ntilde;o&nbsp;&nbsp;&vert;</a></li>
+            <li><a href="#formulario">Formulario &nbsp; &vert;</a></li>
+            <li><a href="#dnd">Donde encontrarnos</a></li>
           </ul>
         </div>
+        <!--Fin menu-->
       </div>
 
       <!--Inicio mascarilla sobre el video<div class="duotone"-->
-      <div class="showcase">
+      <div class="showcase" id="showcase">
         <div class="presentacion">
           <article>
             <h2>Beat Developers</h2>
@@ -223,7 +261,7 @@
       <!--Aquí van las cards-->
       <div class="cards-container">
         <div class="card">
-          <figure>
+          <figure id="solar">
             <img src="./images/solar-640-426.jpg" alt="Fotovoltaica" />
           </figure>
           <div>
@@ -235,7 +273,7 @@
         </div>
 
         <div class="card">
-          <figure>
+          <figure id="pam">
             <img src="./images/proyectos-640-480.jpg" alt="proyectos" />
           </figure>
           <div>
@@ -247,7 +285,7 @@
         </div>
 
         <div class="card">
-          <figure>
+          <figure id="cpe">
             <img src="./images/caja.png" alt="Cajas electrónica" />
           </figure>
           <div>
@@ -261,13 +299,48 @@
       <!--cierra la clase cards-container-->
       <!--Fin de los cards-->
 
-      <div class="cards2">
+      <div id="conocenos" class="cards2">
         <h2>Compañía fundada cuando San Pedro perdi&oacute; las chanclas</h2>
         <h3>Bit Developers cotiza en el Sky Growth desde 64-68 d.C.</h3>
         <p>Con el objetivo de facilitar el desarrollo en energias renovables y maximizar la eficiencia en edificios en su plan de expansión internacional de la empresa, el 25 de diciembre de 68 d.c. nos incorporamos al Sky Growth.</p>
       </div>
-      <div class="contact"></div>
-      <div class="footer"></div>
+      <div class="form" id="formulario">
+        <form action="#" method="get">
+          <label for="name">Nombre</label>
+          <input type="text" name="name" id="name" maxlength="50">
+          <br><br>
+          <label for="surname">Apellidos</label>
+          <input type="text" name="surname" id="surname" maxlength="50">
+          <br><br>
+          <!---->
+          <label for="phone">Teléfono</label>
+          <input type="tel" name="phone" id="phone" placeholder="123-450-678" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"><br><br>
+          <!---->
+          <label for="mail">Correo electrónico:</label>
+          <input type="email" name="mail" id="mail">
+          <br><br>
+        </form>
+      </div>
+
+      <div class="contact" id="dnd">
+        <div class="dnd">
+          <h4>Nos puedes encontrar en: Betriz de pinos,21</h4>
+          <h4>07005-Palma de Mallorca</h4>
+          <h4>Islas Baleares</h4>
+          <h4>Tel (+34) 465 123 123</h4>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3075.4045661308796!2d2.6592115754396137!3d39.5730316065581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x129793ac4ff0da65%3A0xfe4137e3fb74d2a!2sCarrer%20Beatriu%20de%20Pin%C3%B3s%2C%2021%2C%20Llevant%2C%2007005%20Palma%2C%20Illes%20Balears!5e0!3m2!1ses!2ses!4v1732274047937!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="footer">
+        <p>&copy;&nbsp; Creative Comons 2024</p> 
+      </div>
+      
+      
+      
     </div>
+    <div class="ghost-icon">
+      <a href="#showcase"><img src="./images/ghost-solid.svg" alt="Fantasma" /></a>
+    </div>
+    
   </body>
 </html>
